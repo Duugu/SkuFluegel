@@ -1,0 +1,10 @@
+{
+   "Lua.diagnostics.globals": [
+      "LibStub",
+      "BackdropTemplateMixin",
+      "DEFAULT_CHAT_FRAME",
+      "nDCFAddMessage",
+      "nSkuFlDCFAddMessage",
+      "SkuOptions"
+   ]
+}

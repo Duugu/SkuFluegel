@@ -1,0 +1,79 @@
+-------------------------------------------------------------------------------------------------------	
+- FUNKTIONSWEISE
+-------------------------------------------------------------------------------------------------------	
+
+   SkuFluegel zeigt Flügelleuten optisch den Status desjenigen an, den sie führen. 
+   Der Geführte muss dazu nur die normalen Sku-Addons installiert haben.
+   Das SkuFluegel-Addon benötigt der Geführte _nicht_.
+
+   Das Addon stellt bis zu vier kleine Statuspanels mit den folgenden farbigen Buchstaben und Bedeutungen dar:
+      Grau - gerade keine Infos verfügbar
+      Grün - dieser Status trifft zu
+      Gelb - dieser Status trifft teilweise zu (siehe unten zu I)
+      Rot - dieser Status trifft NICHT zu
+
+      F - Folgen (Spieler folgt jemandem)
+      C - Casten (Spieler zaubert)
+      I - Interagieren (Spieler interagiert mit einem NPC)
+          Solange Questgeber-Fenster geöffnet sind, ist das I gelb. Wenn eine Quest abgegeben wird, wird das I für 5 Sekunden grün.
+      M - Mounted (Spieler reitet)
+      L - Looten (Spieler lootet)
+
+      Beispiel: 
+         Ein grünes F bedeutet dass dein Partner gerade jemandem folgt (hoffentlich dir *g*).
+         Ein rotes F bedeutet dass dein Partner gerade niemandem folgt.
+
+   Sounds:
+      Beim Status F gibt es Audiomeldungen. Beim Wechsel von grün/rot macht das Addon Ding bzw. Dong. :)
+      Beim Status I macht das Addon bei grün (Questabgabe) ein kurzes Pling.
+
+   Zielauswahl:
+      Du musst den Ziel-Char für die Statusangaben auswählen. Dazu nimmst du ihn ins Ziel und drückst STRG + SHIFT + 1 bis 4.
+      Danach erscheint das jeweilige Statuspanel (1-4) mit dem  Namen des Chars, den du ausgewählt hast und für den aktuell der Status angezeigt wird.
+      Du kannst jederzeit zu einem anderen Char wechseln. Wenn du gar keinen Status mehr sehen möchtest, drückst du einfach ohne Ziel STRG + SHIFT + 1 bis 4.
+
+   Konfigration:
+      Du kannst die Statuspanels mit der Maus frei verschieben und sie in den Blizzard-Interfaceoptionen konfigurieren (ESC > Interface > Addons > SkuFluegel).
+      Dort kannst du sie zum Beispiel vergrößern/verkleinern, fixieren, oder einzelne Statuswerte ein- und ausschalten.
+
+
+-------------------------------------------------------------------------------------------------------	
+- TASTATURBELEGUNG
+-------------------------------------------------------------------------------------------------------	
+
+   STRG + SHIFT + 1: Aktuelles Ziel für Panel 1 festlegen
+   STRG + SHIFT + 2: Aktuelles Ziel für Panel 2 festlegen
+   STRG + SHIFT + 3: Aktuelles Ziel für Panel 3 festlegen
+   STRG + SHIFT + 4: Aktuelles Ziel für Panel 4 festlegen
+
+
+-------------------------------------------------------------------------------------------------------	
+- VERSIONSHINWEISE
+-------------------------------------------------------------------------------------------------------	
+
+   Version 5.2
+      Neuerungen:
+         - Der Namen des aktuellen Folgen-Ziels steht jetzt unter der Anzeige.
+
+      Fehlerkorrekturen:
+         - Wenn der Folgende bei bereits aktivem Folgen erneut Folgen aktiviert, gibt es jetzt kein Audiosignal mehr.
+
+   Version 5.1
+      Fehlerkorrekturen:
+         - Einen Fehler behoben, durch den bei gleichzeitiger Nutzung der Sku-Addons und von SkuFluegel der Chat in den Sku-Addons nicht mehr funktioniert hat.
+
+   Version 5
+      Fehlerkorrekturen:
+         - Einen neuen Fehler durch Hotfix 2.5.1.65524 behoben.
+
+   Version 3
+      Fehlerkorrekturen:
+         - Einen Fehler mit einer veraltete Lib behoben.
+
+   Version 2
+      Fehlerkorrekturen:
+         - Einen LUA-Fehler beim ersten Start behoben.
+           Alle Panels sind jetzt beim ersten Start unsichtbar, bis ein Ziel für ein Panel festgelegt wurde.
+
+   Version 1
+         - Erste veröffentlichte Version
