@@ -1,7 +1,7 @@
-## Interface: 20501
+## Interface: 20502
 ## Title: SkuFluegel
 ## SavedVariables: SkuFluegelDB
-## Version: 5.2
+## Version: 5.3
 embeds.xml
 locales\enUS.lua
 locales\deDE.lua
