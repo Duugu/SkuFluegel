@@ -51,6 +51,10 @@
 - VERSIONSHINWEISE
 -------------------------------------------------------------------------------------------------------	
 
+   Version 5.4
+      Neuerungen:
+         - Mit STRG + SHIFT + F kannst du jetzt alle festgelegten blinden Flügel dir folgen lassen.
+
    Version 5.2
       Neuerungen:
          - Der Namen des aktuellen Folgen-Ziels steht jetzt unter der Anzeige.

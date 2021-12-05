@@ -163,6 +163,18 @@ function SkuFluegel:OnEnable()
 	tFrame:SetPoint("CENTER")
 	tFrame:SetScript("OnClick", function(self, a, b)
 		for q = 1, 4 do
+			if a == "CTRL-SHIFT-F" then
+				if SkuFluegel.TrackingTarget[q] ~= "Kein Ziel" then
+					if UnitInRaid("player") == true then
+						SkuFluegel:SendCommMessage("Sku", "followme", "RAID", nil, "ALERT")
+					elseif UnitInParty("player") == true then
+						SkuFluegel:SendCommMessage("Sku", "followme", "PARTY", nil, "ALERT")
+					else
+						SkuFluegel:SendCommMessage("Sku", "followme", "WHISPER", SkuFluegel.TrackingTarget[q], "ALERT")
+					end
+				end
+			end
+	
 			if a == "CTRL-SHIFT-"..q then
 				--print(self, a, b)
 				local tname = UnitName("target")
@@ -197,6 +209,7 @@ function SkuFluegel:OnEnable()
 	SetOverrideBindingClick(tFrame, true, "CTRL-SHIFT-2", tFrame:GetName(), "CTRL-SHIFT-2")
 	SetOverrideBindingClick(tFrame, true, "CTRL-SHIFT-3", tFrame:GetName(), "CTRL-SHIFT-3")
 	SetOverrideBindingClick(tFrame, true, "CTRL-SHIFT-4", tFrame:GetName(), "CTRL-SHIFT-4")
+	SetOverrideBindingClick(tFrame, true, "CTRL-SHIFT-F", tFrame:GetName(), "CTRL-SHIFT-F")
 
 	local tSize = 15
 	for q = 1, 4 do
