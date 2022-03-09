@@ -237,6 +237,25 @@ function SkuFluegel:OnEnable()
 				yOfs = yOfs,
 			}
 		end)
+		f:SetScript("OnEnter", function(self)
+			GameTooltip:SetOwner(self)
+			GameTooltip:AddLine([[Grau - gerade keine Infos verfügbar
+Grün - dieser Status trifft zu
+Gelb - dieser Status trifft teilweise zu (siehe unten zu I)
+Rot - dieser Status trifft NICHT zu
+
+F - Folgen (Spieler folgt jemandem)
+C - Casten (Spieler zaubert)
+I - Interagieren (Spieler interagiert mit einem NPC) Solange Questgeber-Fenster geöffnet sind, ist das I gelb. Wenn eine Quest abgegeben wird, wird das I für 5 Sekunden grün.
+M - Mounted (Spieler reitet)
+L - Looten (Spieler lootet)]]
+			)
+			GameTooltip:Show()
+		end)
+		f:SetScript("OnLeave", function(self)
+			GameTooltip:Hide()
+		end)
+
 
 		f:SetPoint("CENTER")
 ---@diagnostic disable-next-line: undefined-field

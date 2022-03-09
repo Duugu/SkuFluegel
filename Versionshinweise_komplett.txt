@@ -51,6 +51,10 @@
 - VERSIONSHINWEISE
 -------------------------------------------------------------------------------------------------------	
 
+   Version 5.5
+      Neuerungen:
+         - Beim Zeigen auf die Anzeige gibt es jetzt einen Tooltip mit den Bedeutungen der Buchstaben.
+
    Version 5.4
       Neuerungen:
          - Mit STRG + SHIFT + F kannst du jetzt alle festgelegten blinden Flügel dir folgen lassen.
