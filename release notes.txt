@@ -1,0 +1,83 @@
+-------------------------------------------------------------------------------------------------------	
+- FUNCTIONALITY
+-------------------------------------------------------------------------------------------------------	
+
+SkuFluegel gives wingpeople a visual indication of the status of whoever they are guiding.   
+The to-be-guided player only needs to have the normal Sku addons installed for this to work.
+
+The SkuFluegel addon does not need to be installed for the player that is to be guided.
+The addon displays up to four small status panels with the following colored letters and meanings:      
+
+      Gray - no information available at the moment      
+      Green - this status applies  
+      Yellow - this status partially applies (see below for I)      
+      Red - this status is NOT applicable
+      F - Follow (player is following someone)
+      C - Casting (player is casting a spell)
+      I - Interact (player is interacting with an NPC)
+          As long as quest giver windows are open, the I will be yellow. When a quest is turned in, the I will turn green for 5 seconds.
+      M - Mounted (player is mounted)
+      L - Looting (player is looting)
+
+      Example: 
+         A green F means your partner is following someone (hopefully you *g*).
+         A red F means that your partner is not currently following anyone.
+
+   Sounds:
+      In the case of status F, the addon provides audio notifications. When changing from green/red, the addon goes ding or dong, depending. :)
+      With status I, the addon plays a short pling when it is green (quest being turned in).
+
+   Target selection:
+      You have to first select the target character the status panels should monitor. To do this, target them in the usual way and press CTRL + SHIFT + 1 to 4.
+      After you've done this, the respective status panel (1-4) will appear with the name of the character you have selected and for which the status is currently displayed.
+      You can switch to another character at any time. If you don't want to see any status anymore, just press CTRL + SHIFT + 1 to 4 without a target.
+
+   Configuration:
+      You can move the status panels around with the mouse and configure them in the Blizzard interface options (ESC > Interface > Addons > SkuFluegel).
+      There you can, for example, enlarge/reduce them, dock them, or switch individual status values on and off.
+
+
+-------------------------------------------------------------------------------------------------------	
+- KEYBINDINGS
+-------------------------------------------------------------------------------------------------------	
+
+   CTRL + SHIFT + 1: Set current target for panel 1
+   STRG + SHIFT + 2: Aktuelles Ziel für Panel 2 festlegen
+   STRG + SHIFT + 3: Aktuelles Ziel für Panel 3 festlegen
+   STRG + SHIFT + 4: Aktuelles Ziel für Panel 4 festlegen
+
+
+-------------------------------------------------------------------------------------------------------	
+- CHANGELOG
+-------------------------------------------------------------------------------------------------------	
+
+   Version 5.5
+      What's new:
+         - There is now a tooltip with the meanings of the letters when hovering over the display.
+
+   Version 5.4
+      What's New:
+         - With CTRL + SHIFT + F you can now make all specified blind "wings" follow you.
+
+   Version 5.2
+      What's New:
+         - The name of the current follow target is now displayed below the indicator.
+      What's Fixed:
+         - If the follower activates follow again while following is already active, the audio notification will now no longer play again.
+
+   Version 5.1
+      What's Fixed:
+         - Fixed a bug where the chat in the sku addons stopped working when using the sku addons and SkuFluegel at the same time.
+   Version 5
+      What's Fixed:
+         - Fixed a new bug introduced by Hotfix 2.5.1.65524.
+   Version 3
+      What's Fixed:
+         - Fixed a bug with an outdated lib.
+   Version 2
+      What's Fixed:
+         - Fixed a LUA error on first launch.
+           All panels are now invisible on first launch until a target is set for a panel.
+
+   Version 1
+         - Initial release
