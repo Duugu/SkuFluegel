@@ -1,9 +1,11 @@
 local MODULE_NAME = "SkuFluegel"
+local L = LibStub("AceLocale-3.0"):GetLocale("SkuFluegel", false)
+
 SkuFluegel.options = {
 	type = "group",
 	args = {
 		addonEnabled = {
-			name = "Aktiviert" ,
+			name = L["Enabled"],
 			desc = "",
 			type = "toggle",
 			set = function(info, val)
@@ -15,7 +17,7 @@ SkuFluegel.options = {
 			end
 		},
 		locked = {
-			name = "Gesperrt" ,
+			name = L["Gesperrt"],
 			desc = "",
 			type = "toggle",
 			set = function(info, val)
@@ -27,7 +29,7 @@ SkuFluegel.options = {
 			end
 		},
 		size = {
-			name = "Größe" ,
+			name = L["Größe"] ,
 			desc = "",
 			type = "range",
 			min = 5,
@@ -42,7 +44,7 @@ SkuFluegel.options = {
 			end
 		},
 		followEnabled = {
-			name = "Folgen" ,
+			name = L["Folgen"],
 			desc = "",
 			type = "toggle",
 			set = function(info, val)
@@ -54,7 +56,7 @@ SkuFluegel.options = {
 			end
 		},
 		castEnabled = {
-			name = "Casten" ,
+			name = L["Casten"] ,
 			desc = "",
 			type = "toggle",
 			set = function(info, val)
@@ -66,7 +68,7 @@ SkuFluegel.options = {
 			end
 		},
 		interactEnabled = {
-			name = "Interagieren" ,
+			name = L["Interagieren"],
 			desc = "",
 			type = "toggle",
 			set = function(info, val)
@@ -78,7 +80,7 @@ SkuFluegel.options = {
 			end
 		},
 		mountedEnabled = {
-			name = "Reiten" ,
+			name = L["Reiten"] ,
 			desc = "",
 			type = "toggle",
 			set = function(info, val)
@@ -90,7 +92,7 @@ SkuFluegel.options = {
 			end
 		},
 		lootingEnabled = {
-			name = "Looten" ,
+			name = L["Looten"] ,
 			desc = "",
 			type = "toggle",
 			set = function(info, val)

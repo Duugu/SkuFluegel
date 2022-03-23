@@ -16,10 +16,10 @@ SkuFluegel.NotificationWidgets = {
 	[5] = "L", --looting
 }
 SkuFluegel.TrackingTarget = {
-	[1] = "Kein Ziel",
-	[2] = "Kein Ziel",
-	[3] = "Kein Ziel",
-	[4] = "Kein Ziel",
+	[1] = L["Kein Ziel"],
+	[2] = L["Kein Ziel"],
+	[3] = L["Kein Ziel"],
+	[4] = L["Kein Ziel"],
 }
 SkuFluegel.moving = {
 	[1] = false,
@@ -141,7 +141,7 @@ function SkuFluegel:OnEnable()
  			ttime = ttime + time
 			if ttime > 5 then
 				for q = 1, 4 do
-					if SkuFluegel.TrackingTarget[q] ~= "Kein Ziel" then
+					if SkuFluegel.TrackingTarget[q] ~= L["Kein Ziel"] then
 						if UnitInRaid("player") == true then
 							SkuFluegel:SendCommMessage("Sku", "ping-ping", "RAID", nil, "ALERT")
 						elseif UnitInParty("player") == true then
@@ -164,7 +164,7 @@ function SkuFluegel:OnEnable()
 	tFrame:SetScript("OnClick", function(self, a, b)
 		for q = 1, 4 do
 			if a == "CTRL-SHIFT-F" then
-				if SkuFluegel.TrackingTarget[q] ~= "Kein Ziel" then
+				if SkuFluegel.TrackingTarget[q] ~= L["Kein Ziel"] then
 					if UnitInRaid("player") == true then
 						SkuFluegel:SendCommMessage("Sku", "followme", "RAID", nil, "ALERT")
 					elseif UnitInParty("player") == true then
@@ -189,7 +189,7 @@ function SkuFluegel:OnEnable()
 						SkuFluegel:SendCommMessage("Sku", "ping-ping", "WHISPER", SkuFluegel.TrackingTarget[q], "ALERT")
 					end
 				else
-					SkuFluegel.TrackingTarget[q] = "Kein Ziel"
+					SkuFluegel.TrackingTarget[q] = L["Kein Ziel"]
 				end
 				SkuFluegel.TrackingData[q] = {
 					F = 0,
@@ -239,17 +239,7 @@ function SkuFluegel:OnEnable()
 		end)
 		f:SetScript("OnEnter", function(self)
 			GameTooltip:SetOwner(self)
-			GameTooltip:AddLine([[Grau - gerade keine Infos verfügbar
-Grün - dieser Status trifft zu
-Gelb - dieser Status trifft teilweise zu (siehe unten zu I)
-Rot - dieser Status trifft NICHT zu
-
-F - Folgen (Spieler folgt jemandem)
-C - Casten (Spieler zaubert)
-I - Interagieren (Spieler interagiert mit einem NPC) Solange Questgeber-Fenster geöffnet sind, ist das I gelb. Wenn eine Quest abgegeben wird, wird das I für 5 Sekunden grün.
-M - Mounted (Spieler reitet)
-L - Looten (Spieler lootet)]]
-			)
+			GameTooltip:AddLine(L["TooltipInfo"])
 			GameTooltip:Show()
 		end)
 		f:SetScript("OnLeave", function(self)
@@ -272,14 +262,14 @@ L - Looten (Spieler lootet)]]
 		fs:SetJustifyH("LEFT")
 		fs:SetJustifyV("BOTTOM")
 		fs:SetPoint("BOTTOMLEFT", f, "TOPLEFT")
-		fs:SetText("Kein Ziel")
+		fs:SetText(L["Kein Ziel"])
 		local fs = f:CreateFontString("SkuFluegelVisual"..q.."FSFollowTarget")
 		fs:SetFont("Interface\\AddOns\\SkuFluegel\\assets\\09803_CourierNewFett.ttf", tSize / 2, "OUTLINE")
 		fs:SetTextColor(1, 1, 1, 1)
 		fs:SetJustifyH("LEFT")
 		fs:SetJustifyV("BOTTOM")
 		fs:SetPoint("TOPLEFT", f, "BOTTOMLEFT")
-		fs:SetText("Kein Ziel")
+		fs:SetText(L["Kein Ziel"])
 		for x = 1, #SkuFluegel.NotificationWidgets do
 			local fs = f:CreateFontString("SkuFluegelVisual"..q.."FS"..SkuFluegel.NotificationWidgets[x])
 			fs:SetFont("Interface\\AddOns\\SkuFluegel\\assets\\09803_CourierNewFett.ttf", tSize, "OUTLINE")
@@ -351,7 +341,7 @@ function SkuFluegel:RefreshVisuals()
 						local fs = _G["SkuFluegelVisual"..q.."FS"..SkuFluegel.NotificationWidgets[x]]
 						fs:SetFont("Interface\\AddOns\\SkuFluegel\\assets\\09803_CourierNewFett.ttf", tSize, "OUTLINE")
 
-						if SkuFluegel.TrackingTarget[q]~= "Kein Ziel" then
+						if SkuFluegel.TrackingTarget[q]~= L["Kein Ziel"] then
 							if SkuFluegel.TrackingData[q][SkuFluegel.NotificationWidgets[x]] == 0 then
 								fs:SetTextColor(0.5, 0.5, 0.5, 1)
 							elseif SkuFluegel.TrackingData[q][SkuFluegel.NotificationWidgets[x]] == 1 then
@@ -382,7 +372,7 @@ function SkuFluegel:RefreshVisuals()
 
 				_G["SkuFluegelVisual"..q.."FSFollowTarget"]:SetText(SkuFluegel.TrackingData[q]["FN"])
 
-				if SkuFluegel.TrackingTarget[q] == "Kein Ziel" then
+				if SkuFluegel.TrackingTarget[q] == L["Kein Ziel"] then
 					f:Hide()
 				else
 					f:Show()
@@ -398,7 +388,7 @@ function nSkuFlDCFAddMessage(...)
 	local a, b, c, d, e, f = ...
 	local tResult 
 	if b then
-		tResult = string.find(b, "Momentan ist kein Spieler mit dem Namen")
+		tResult = string.find(b, L["Momentan ist kein Spieler mit dem Namen"])
 	end
 	if not tResult then
 		oSkuFlDCFAddMessage(...)
@@ -419,7 +409,7 @@ function nSkuFlDCFAddMessage(...)
 			if SkuFluegel.TrackingTarget then
 				for q = 1, 4 do
 					if tTargetName == SkuFluegel.TrackingTarget[q] then
-						SkuFluegel.TrackingTarget[q] = "Kein Ziel"
+						SkuFluegel.TrackingTarget[q] = L["Kein Ziel"]
 						SkuFluegel:RefreshVisuals()
 					end
 				end
