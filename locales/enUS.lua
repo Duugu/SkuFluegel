@@ -21,4 +21,4 @@ L["TooltipInfo"] = [[Gray - no information available at the moment
    L["Reiten"] = "Mounted"
    L["Looten"] = "Looting"
    L["Kein Ziel"] = "No target"
-   L["Momentan ist kein Spieler mit dem Namen"] = "no player with"
+   L["Momentan ist kein Spieler mit dem Namen"] = "No player named"
