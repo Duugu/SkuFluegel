@@ -41,15 +41,25 @@ The addon displays up to four small status panels with the following colored let
 - KEYBINDINGS
 -------------------------------------------------------------------------------------------------------	
 
+   CTRL + SHIFT + F: Remotely set blind players on following you
+   CTRL + SHIFT + V: Remotely set blind players on unfollowing you
    CTRL + SHIFT + 1: Set current target for panel 1
-   STRG + SHIFT + 2: Aktuelles Ziel für Panel 2 festlegen
-   STRG + SHIFT + 3: Aktuelles Ziel für Panel 3 festlegen
-   STRG + SHIFT + 4: Aktuelles Ziel für Panel 4 festlegen
+   CTRL + SHIFT + 2: Aktuelles Ziel für Panel 2 festlegen
+   CTRL + SHIFT + 3: Aktuelles Ziel für Panel 3 festlegen
+   CTRL + SHIFT + 4: Aktuelles Ziel für Panel 4 festlegen
 
 
 -------------------------------------------------------------------------------------------------------	
 - CHANGELOG
 -------------------------------------------------------------------------------------------------------	
+
+   Version 5.7
+      What's new:
+         - CAUTION: Blind players need to use Sku r27.15 to have the new features working!
+         - There is a new key bind CTRL + SHIFT + V to remotely set blind players on unfollow. 
+         - It now is possible to set all blind players or a specific blind player on follow/unfollow. If you are targeting a blind player, then only that player will be set on follow/unfollow. If you are targeting nothing, or something else than one of the blind players (tracked targets 1-4), then all blind players will follow/unfollow.	
+         - The status will now update instantly.
+         - Fixed a bug with the C status (casting). Sometimes that status wasn't updated correctly. It still can happen, if the blind player is starting a cast and stopps that cast instantly.
 
    Version 5.5
       What's new:

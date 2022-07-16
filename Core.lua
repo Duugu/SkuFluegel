@@ -162,19 +162,41 @@ function SkuFluegel:OnEnable()
 	tFrame:SetPoint("LEFT", UIParent, "RIGHT", 1500, 0)
 	tFrame:SetPoint("CENTER")
 	tFrame:SetScript("OnClick", function(self, a, b)
-		for q = 1, 4 do
-			if a == "CTRL-SHIFT-F" then
+		--print(a, b)
+
+		if a == "CTRL-SHIFT-F" or a == "CTRL-SHIFT-V" then
+			local tMainMsg = "followme"
+			if a == "CTRL-SHIFT-V" then
+				tMainMsg = "unfollowme"
+			end
+			if not UnitName("target") or not (SkuFluegel.TrackingTarget[1] == UnitName("target") or SkuFluegel.TrackingTarget[2] == UnitName("target") or SkuFluegel.TrackingTarget[3] == UnitName("target") or SkuFluegel.TrackingTarget[4] == UnitName("target")) then
+				for q = 1, 4 do
+					local tMessage = tMainMsg
+					if SkuFluegel.TrackingTarget[q] ~= L["Kein Ziel"] then
+						if UnitInRaid("player") == true then
+							SkuFluegel:SendCommMessage("Sku", tMessage, "RAID", nil, "ALERT")
+						elseif UnitInParty("player") == true then
+							SkuFluegel:SendCommMessage("Sku", tMessage, "PARTY", nil, "ALERT")
+						else
+							SkuFluegel:SendCommMessage("Sku", tMessage, "WHISPER", SkuFluegel.TrackingTarget[q], "ALERT")
+						end
+					end
+				end
+			else
+				tMessage = tMainMsg.."-"..UnitName("target")
 				if SkuFluegel.TrackingTarget[q] ~= L["Kein Ziel"] then
 					if UnitInRaid("player") == true then
-						SkuFluegel:SendCommMessage("Sku", "followme", "RAID", nil, "ALERT")
+						SkuFluegel:SendCommMessage("Sku", tMessage, "RAID", nil, "ALERT")
 					elseif UnitInParty("player") == true then
-						SkuFluegel:SendCommMessage("Sku", "followme", "PARTY", nil, "ALERT")
+						SkuFluegel:SendCommMessage("Sku", tMessage, "PARTY", nil, "ALERT")
 					else
-						SkuFluegel:SendCommMessage("Sku", "followme", "WHISPER", SkuFluegel.TrackingTarget[q], "ALERT")
+						SkuFluegel:SendCommMessage("Sku", tMessage, "WHISPER", SkuFluegel.TrackingTarget[q], "ALERT")
 					end
 				end
 			end
+		end
 	
+		for q = 1, 4 do
 			if a == "CTRL-SHIFT-"..q then
 				--print(self, a, b)
 				local tname = UnitName("target")
@@ -200,16 +222,18 @@ function SkuFluegel:OnEnable()
 					Z = 0,
 					FN = "",
 				}
-
-				SkuFluegel:RefreshVisuals()
 			end
 		end
+
+		SkuFluegel:SendPing()
+		SkuFluegel:RefreshVisuals()
 	end)
 	SetOverrideBindingClick(tFrame, true, "CTRL-SHIFT-1", tFrame:GetName(), "CTRL-SHIFT-1")
 	SetOverrideBindingClick(tFrame, true, "CTRL-SHIFT-2", tFrame:GetName(), "CTRL-SHIFT-2")
 	SetOverrideBindingClick(tFrame, true, "CTRL-SHIFT-3", tFrame:GetName(), "CTRL-SHIFT-3")
 	SetOverrideBindingClick(tFrame, true, "CTRL-SHIFT-4", tFrame:GetName(), "CTRL-SHIFT-4")
 	SetOverrideBindingClick(tFrame, true, "CTRL-SHIFT-F", tFrame:GetName(), "CTRL-SHIFT-F")
+	SetOverrideBindingClick(tFrame, true, "CTRL-SHIFT-V", tFrame:GetName(), "CTRL-SHIFT-V")
 
 	local tSize = 15
 	for q = 1, 4 do
@@ -289,15 +313,38 @@ function SkuFluegel:OnDisable()
 end
 
 ---------------------------------------------------------------------------------------------------------------------------------------
+function SkuFluegel:SendPing()
+	--print(self, a, b)
+	for q = 1, 4 do
+		local tname = SkuFluegel.TrackingTarget[q]
+		if tname then
+			if UnitInRaid("player") == true then
+				SkuFluegel:SendCommMessage("Sku", "ping-ping", "RAID", nil, "ALERT")
+			elseif UnitInParty("player") == true then
+				SkuFluegel:SendCommMessage("Sku", "ping-ping", "PARTY", nil, "ALERT")
+			else
+				SkuFluegel:SendCommMessage("Sku", "ping-ping", "WHISPER", SkuFluegel.TrackingTarget[q], "ALERT")
+			end
+			SkuFluegel.TrackingData[q] = {
+				F = 0,
+				C = 0,
+				I = 0,
+				M = 0,
+				L = 0,
+				Z = 0,
+				FN = "",
+			}
+		end
+	end
+	SkuFluegel:RefreshVisuals()
+end
+
+---------------------------------------------------------------------------------------------------------------------------------------
 function SkuFluegel:RefreshVisuals()
 	local tSize = SkuFluegel.db.profile.size or 15
 	for q = 1, 4 do
 		local f = _G["SkuFluegelVisual"..q]
 		if f then
-
-
-
-
 			SkuFluegel.db.profile.position = SkuFluegel.db.profile.position or {}
 			if not SkuFluegel.db.profile.position[q] then
 				local point, relativeTo, relativePoint, xOfs, yOfs = f:GetPoint(1)
@@ -309,8 +356,6 @@ function SkuFluegel:RefreshVisuals()
 					yOfs = yOfs,
 				}
 			end
-
-
 
 			if SkuFluegel.db.profile.position[q].relativeTo then
 				if SkuFluegel.moving[q] ~= true then

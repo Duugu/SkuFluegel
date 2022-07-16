@@ -41,6 +41,8 @@
 - TASTATURBELEGUNG
 -------------------------------------------------------------------------------------------------------	
 
+   STRG + SHIFT + F: Partner auf Folgen setzen
+   STRG + SHIFT + V: Folgen von Partner beenden
    STRG + SHIFT + 1: Aktuelles Ziel für Panel 1 festlegen
    STRG + SHIFT + 2: Aktuelles Ziel für Panel 2 festlegen
    STRG + SHIFT + 3: Aktuelles Ziel für Panel 3 festlegen
@@ -50,6 +52,14 @@
 -------------------------------------------------------------------------------------------------------	
 - VERSIONSHINWEISE
 -------------------------------------------------------------------------------------------------------	
+
+   Version 5.7
+      Neuerungen:
+         - ACHTUNG: Die blinden Sku-Nutzer benötigen Sku r27.15 damit die folgenen Features funktionieren!
+         - Mit STRG + SHIFT + V kannst du einen blinden Spieler jetzt wieder abhängen. 
+         - Du kannst jetzt einen bestimmten blinden Spieler oder alle blinden Spieler auf folgen setzen bzw. abhängen. Wenn du einen blinden Spieler im Ziel hast, wird nur dieser auf folgen gesetzt bzw. abgehängt. Wenn du kein Ziel hast bzw. keinen deiner bis zu vier nachverfolgten blinden Spieler im Ziel hast, werden alle blinden Spieler auf folgen gesetzt/abgehängt.
+         - Der Status in der Anzeige sollte nun sofort aktualisiert werden.
+         - Ich habe einen Bug mit dem Status C (casting) behoben. Der wurde manchmal nicht korrektu aktualisiert. Das kann immer noch passieren, wenn der andere Spieler einen Zauber beginnt und diesen sofort wieder abbricht.
 
    Version 5.5
       Neuerungen:
