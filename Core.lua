@@ -232,8 +232,8 @@ function SkuFluegel:OnEnable()
 	SetOverrideBindingClick(tFrame, true, "CTRL-SHIFT-2", tFrame:GetName(), "CTRL-SHIFT-2")
 	SetOverrideBindingClick(tFrame, true, "CTRL-SHIFT-3", tFrame:GetName(), "CTRL-SHIFT-3")
 	SetOverrideBindingClick(tFrame, true, "CTRL-SHIFT-4", tFrame:GetName(), "CTRL-SHIFT-4")
-	SetOverrideBindingClick(tFrame, true, "CTRL-SHIFT-F", tFrame:GetName(), "CTRL-SHIFT-F")
-	SetOverrideBindingClick(tFrame, true, "CTRL-SHIFT-V", tFrame:GetName(), "CTRL-SHIFT-V")
+	--SetOverrideBindingClick(tFrame, true, "CTRL-SHIFT-F", tFrame:GetName(), "CTRL-SHIFT-F")
+	--SetOverrideBindingClick(tFrame, true, "CTRL-SHIFT-V", tFrame:GetName(), "CTRL-SHIFT-V")
 
 	local tSize = 15
 	for q = 1, 4 do

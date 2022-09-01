@@ -41,8 +41,6 @@
 - TASTATURBELEGUNG
 -------------------------------------------------------------------------------------------------------	
 
-   STRG + SHIFT + F: Partner auf Folgen setzen
-   STRG + SHIFT + V: Folgen von Partner beenden
    STRG + SHIFT + 1: Aktuelles Ziel für Panel 1 festlegen
    STRG + SHIFT + 2: Aktuelles Ziel für Panel 2 festlegen
    STRG + SHIFT + 3: Aktuelles Ziel für Panel 3 festlegen
@@ -52,6 +50,10 @@
 -------------------------------------------------------------------------------------------------------	
 - VERSIONSHINWEISE
 -------------------------------------------------------------------------------------------------------	
+
+   Version 6
+      Neuerungen:
+	- Die Tasten um blinde Spieler auf folgen/nicht folgen zu setzen wurde entfernt. Blizzard hat diese Funktion für Addons gestrichen.(https://us.forums.blizzard.com/en/wow/t/re-addons-still-able-to-execute-remote-follow-commands/1298614)
 
    Version 5.7
       Neuerungen:

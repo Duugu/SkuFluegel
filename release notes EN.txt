@@ -2,7 +2,7 @@
 - FUNCTIONALITY
 -------------------------------------------------------------------------------------------------------	
 
-SkuFluegel gives wingpeople a visual indication of the status of whoever they are guiding.   
+SkuFluegel provides sighted players a visual indication of the status of blind players they are guiding.   
 The to-be-guided player only needs to have the normal Sku addons installed for this to work.
 
 The SkuFluegel addon does not need to be installed for the player that is to be guided.
@@ -41,17 +41,19 @@ The addon displays up to four small status panels with the following colored let
 - KEYBINDINGS
 -------------------------------------------------------------------------------------------------------	
 
-   CTRL + SHIFT + F: Remotely set blind players on following you
-   CTRL + SHIFT + V: Remotely set blind players on unfollowing you
    CTRL + SHIFT + 1: Set current target for panel 1
-   CTRL + SHIFT + 2: Aktuelles Ziel für Panel 2 festlegen
-   CTRL + SHIFT + 3: Aktuelles Ziel für Panel 3 festlegen
-   CTRL + SHIFT + 4: Aktuelles Ziel für Panel 4 festlegen
+   CTRL + SHIFT + 2: Set current target for panel 2
+   CTRL + SHIFT + 3: Set current target for panel 3
+   CTRL + SHIFT + 4: Set current target for panel 4
 
 
 -------------------------------------------------------------------------------------------------------	
 - CHANGELOG
 -------------------------------------------------------------------------------------------------------	
+
+   Version 6
+      What's new:
+	- The options to remotely set blind players on follow/unfollow has been removed. Blizzard has removed that feature for addons. (https://us.forums.blizzard.com/en/wow/t/re-addons-still-able-to-execute-remote-follow-commands/1298614)
 
    Version 5.7
       What's new:
