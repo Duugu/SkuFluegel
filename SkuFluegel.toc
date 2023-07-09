@@ -1,7 +1,8 @@
-## Interface: 30400
-## Title: SkuFluegel (6)
+## Interface: 30402
+## Title: SkuFluegel (7)
 ## SavedVariables: SkuFluegelDB
-## Version: 6
+## Version: 7
+## X-Curse-Project-ID: 
 embeds.xml
 locales\enUS.lua
 locales\deDE.lua
